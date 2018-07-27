@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'stutens_manage',
+    'students_manage',
     'pure_pagination',
 ]
 PAGINATION_SETTINGS={
