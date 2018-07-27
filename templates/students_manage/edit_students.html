@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>编辑学生</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="nid" value="{{ obj.id }}">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>男</th>
+                <th>女</th>
+                <th>班级</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="name" placeholder="{{ obj.name }}"></td>
+                <td><input type="text" name="age" placeholder="{{ obj.age }}"></td>
+                {% if obj.gender %}
+                    <td><input type="radio" name="gender" value="1" checked="1"></td>
+                    <td><input type="radio" name="gender" value="0"></td>
+                {% else %}
+                    <td><input type="radio" name="gender" value="1"></td>
+                    <td><input type="radio" name="gender" value="0" checked="1"></td>
+                {% endif %}
+                <td><select name="classes">
+                        {% for row in cs_list %}
+                        <option value="{{ row.id }}">{{ row.title }}</option>
+                        {% endfor %}
+                        <option selected="selected">{{ obj.classes }}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

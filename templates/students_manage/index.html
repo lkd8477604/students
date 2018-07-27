@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block welcome %}
+{% if request.user.is_authenticated %}
+<span>{{ request.user.name }}</span>
+{% else %}
+<span>登陆/注册</span>
+{% endif %}
+{% endblock %}
+<form action="" method="post">
+{% csrf_token %}
+    用户名<input type="text" name="username">
+    密码<input type="password" name="password">
+    <input type="submit" value="登录">
+    <div>
+        {% if login_err %}
+        <p style="color:red">{{ login_err }}</p>
+        {% endif %}
+    </div>
+</form>
+<a href="/stutens_manage/log_out.html">退出系统</a>
+</body>
+</html>

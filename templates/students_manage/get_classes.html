@@ -1,0 +1,92 @@
+{% extends 'students_manage/host.html' %}
+
+{% block contents %}
+<div>
+    <table class="table-hover">
+        <thead>
+            <tr>
+                 <th>ID</th>
+                <th>名称</th>
+                <th>老师</th>
+                <th colspan="4">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in class_list.object_list %}
+{#            {% for row in class_list %}#}
+            <tr nid="{{ row.id }}">
+                <td>{{ row.id }}</td>
+                <td>{{ row.title }}</td>
+                <td>
+                    {% for teacher in row.teachers.all %}
+                        <span>{{ teacher.name }}</span>
+                    {% endfor %}
+                </td>
+                <td><a href="del_classes.html?nid={{ row.id }}">删除</a></td>
+                <td><a href="edit_classes.html?nid={{ row.id }}">编辑</a></td>
+                <td><a href="set_teachers.html?nid={{ row.id }}">分配老师</a></td>
+                <td><a href="#" onclick="removeClass(this);">Ajax删除</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div><a href="add_classes.html">添加</a></div>
+<a href="http://127.0.0.1:8000/stutens_manage/log_out.html">退出系统</a>
+
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script>
+    function removeClass(ths) {
+        var nid = $(ths).parent().parent().attr('nid')
+        $.ajax({
+            url:'/stutens_manage/ajax.html',
+            type:'GET',
+            data:{nid : nid},
+            success:function (arg) {
+                if (arg == '成功'){
+                    window.location.reload();
+                }
+                else {
+                    alert(arg);
+                }
+            }
+
+        })
+    }
+</script>
+
+{#{% endfor %}#}
+<style>
+li{float:left;list-style: none;}
+</style>
+    <div class="text-monospace,pagination">
+       <ul>
+        {% if class_list.has_previous %}
+            <li class="pagination-lg">
+                <a href="?{{ class_list.previous_page_number.querystring }}" class="prev">上一页</a>
+            </li>
+        {% endif %}
+        {% for page in class_list.pages %}
+            {% if page %}
+                {% ifequal page class_list.number %}
+                <li class="active">
+                    <a style="color: #6f42c1" href="?{{ page.querystring }}">{{ page }}</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                </li>
+                {% endifequal %}
+            {% else %}
+                    <li class="none"><a href="">...</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if class_list.has_next %}
+            <li class="pagination-lg">
+                <a href="?{{ class_list.next_page_number.querystring }}">下一页</a>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+{% endblock %}

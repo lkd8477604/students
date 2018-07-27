@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>班级</th>
+                <th>老师</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ class_obj.title }}</td>
+                <td>
+                    <select name="teachersID" multiple="multiple">
+                        {% for al_te in al_te_list %}
+                            {% if al_te in cl_te_list %}
+                                <option value="{{ al_te.id }}" selected="selected">{{ al_te.name }}</option>
+                            {% else %}
+                            <option value="{{ al_te.id }}">{{ al_te.name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

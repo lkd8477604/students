@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://www.youzhan.org/themes-guide/ -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>学生管理系统</title>
+    <meta name="description" content="Beautiful, Hand-crafted
+Customizable Bootstrap Themes &amp; Templates">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/site.min.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/static/bootstrap/js/hm.js"></script><script>
+    function imgLoaded(img) {
+        var imgWrapper = img.parentNode;
+        imgWrapper.className += imgWrapper.className? ' loaded' : 'loaded';
+    }
+    </script>
+
+    <link rel="canonical" href="http://www.youzhan.org/themes-guide/">
+    <meta name="generator" content="Ghost 0.6">
+    <link rel="alternate" type="application/rss+xml" title="Bootstrap 优站精选" href="http://www.youzhan.org/rss/">
+    <script id="ad-template" type="text/x-handlebars-template">
+{#{{#each ads}}#}
+{#<div class="col-xs-12 col-md-6">#}
+{#    <article class="post tag-ad">#}
+{#    	<h2 class="post-title">#}
+{#    		<a href="{{url}}" onclick="_hmt.push(['_trackEvent', 'titlelink', 'click', '{{{title}}}'])" target="_blank">{{{title}}}</a>#}
+{#    	</h2>#}
+{#        <div class="post-featured-image">#}
+{#            <a class="thumbnail" href="{{url}}" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', '{{{title}}}'])" target="_blank">#}
+{#              <img src="{{img}}" width="700" height="438" alt="{{{title}}}" onload="imgLoaded(this)">#}
+{#            </a>#}
+{#        </div>#}
+{#    </article>#}
+{#</div>#}
+{#{{/each}}#}
+</script>
+
+<script>
+var ads=
+[
+    {
+        "title": "前端免费公开课",
+    "url": "http://web.tanzhouedu.com/index/keCourse04.html",
+    "img": "http://image.youzhan.org/d/ee/a8dc9138ba9901c3efba83f60f818.jpg"
+    },
+  {
+    "title": "Jekyll",
+    "url": "https://www.jekyll.com.cn",
+    "img": "http://image.youzhan.org/2/ee/6f8bba4cb328d2db91bb14a5b6077.png?x-oss-process=imgalias/thumb"
+  },
+    {
+    "title": "Ghost中文网",
+    "url": "http://www.ghostchina.com/",
+    "img": "http://image.youzhan.org/f/11/5f6a450fc7987ec7c64dc9fb8c9c3.png?x-oss-process=imgalias/thumb"
+  },
+  {
+    "title": "Laravel中文网",
+    "url": "http://www.golaravel.com/",
+    "img": "http://image.youzhan.org/7/b4/b0c83b769aadc072d883dd6bc0bbb.png?x-oss-process=imgalias/thumb"
+  }
+];
+</script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.youzhan.org/assets/ico/apple-touch-icon-144-precomposed.png?v=6427a71fed">
+    <link rel="shortcut icon" href="http://www.youzhan.org/assets/ico/favicon.png?v=6427a71fed">
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?15c141dd41d16b47f32d4c5476e1f6f4";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css" abt="234"></style><script>//console.log('a')
+</script><script>//remove 17173 video ad
+doAdblock();
+function doAdblock(){
+    (function() {
+        function A() {}
+        A.prototype = {
+            rules: {
+                '17173_in':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFile(Customer)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_in_20150522.swf"
+                },
+                '17173_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFileFirstpage\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_out_20150522.swf"
+                },
+                '17173_live':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream(_firstpage)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_stream_20150522.swf"
+                },
+                '17173_live_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream_(custom)?Out\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173.out.Live.swf"
+                }
+            },
+            _done: null,
+            get done() {
+                if(!this._done) {
+                    this._done = new Array();
+                }
+                return this._done;
+            },
+            addAnimations: function() {
+                var style = document.createElement('style');
+                style.type = 'text/css';
+                style.innerHTML = 'object,embed{\
+                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                animation-duration:.001s;animation-name:playerInserted;}\
+                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+                document.getElementsByTagName('head')[0].appendChild(style);
+            },
+            animationsHandler: function(e) {
+                if(e.animationName === 'playerInserted') {
+                    this.replace(e.target);
+                }
+            },
+            replace: function(elem) {
+                if(this.done.indexOf(elem) != -1) return;
+                this.done.push(elem);
+                var player = elem.data || elem.src;
+                if(!player) return;
+                var i, find, replace = false;
+                for(i in this.rules) {
+                    find = this.rules[i]['find'];
+                    if(find.test(player)) {
+                        replace = this.rules[i]['replace'];
+                        if('function' === typeof this.rules[i]['preHandle']) {
+                            this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                        }else{
+                            this.reallyReplace.bind(this, elem, find, replace)();
+                        }
+                        break;
+                    }
+                }
+            },
+            reallyReplace: function(elem, find, replace) {
+                elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+                var b = elem.querySelector("param[name='movie']");
+                this.reloadPlugin(elem);
+            },
+            reloadPlugin: function(elem) {
+                var nextSibling = elem.nextSibling;
+                var parentNode = elem.parentNode;
+                parentNode.removeChild(elem);
+                var newElem = elem.cloneNode(true);
+                this.done.push(newElem);
+                if(nextSibling) {
+                    parentNode.insertBefore(newElem, nextSibling);
+                } else {
+                    parentNode.appendChild(newElem);
+                }
+            },
+            init: function() {
+                var handler = this.animationsHandler.bind(this);
+                document.body.addEventListener('webkitAnimationStart', handler, false);
+                document.body.addEventListener('msAnimationStart', handler, false);
+                document.body.addEventListener('oAnimationStart', handler, false);
+                document.body.addEventListener('animationstart', handler, false);
+                this.addAnimations();
+            }
+        };
+        new A().init();
+    })();
+}
+//remove baidu search ad
+if(document.URL.indexOf('www.baidu.com') >= 0){
+    if(document && document.getElementsByTagName && document.getElementById && document.body){
+        var aa = function(){
+            var all = document.body.querySelectorAll("#content_left div,#content_left table");
+            for(var i = 0; i < all.length; i++){
+                if(/display:\s?(table|block)\s!important/.test(all[i].getAttribute("style"))){all[i].style.display= "none";all[i].style.visibility='hidden';}
+            }
+            all = document.body.querySelectorAll('.result.c-container[id="1"]');
+            //if(all.length == 1) return;
+            for(var i = 0; i < all.length; i++){
+                if(all[i].innerHTML && all[i].innerHTML.indexOf('广告')>-1){
+                    all[i].style.display= "none";all[i].style.visibility='hidden';
+                }
+            }
+        }
+        aa();
+        document.getElementById('wrapper_wrapper').addEventListener('DOMSubtreeModified',aa)
+    };
+}
+//remove sohu video ad
+if (document.URL.indexOf("tv.sohu.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//remove 56.com video ad
+if (document.URL.indexOf("56.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//fore iqiyi enable html5 player function
+if (document.URL.indexOf("iqiyi.com") >= 0){
+    if (document.cookie.indexOf("player_forcedType=h5_VOD")==-1){
+        document.cookie='player_forcedType=h5_VOD'
+        if(localStorage.reloadTime && Date.now() - parseInt(localStorage.reloadTime)<60000){
+            console.log('no reload')
+        }else{
+            location.reload()
+            localStorage.reloadTime = Date.now();
+        }
+    }
+}
+</script><style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style></head>
+<body class="post-template tag-foreign-website tag-bootstrap-v4">
+
+
+
+<div class="header" style="background-image: url(http://image.youzhan.org/d/dd/2de797545de56274f03a5920eb3a1.jpg)">
+  <div class="logoimg">
+{#    <a href="http://www.youzhan.org/" title="Bootstrap 优站精选"><img src="./Themes.guide_files/22ccaf4c24ef690f7767e6a3ba5f0.png" alt="Bootstrap 优站精选" width="78"></a>#}
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+      {% if request.user.is_authenticated %}
+          <h2 class="site-name text-center">尊敬的{{ request.user }}</h2>
+      {% endif %}
+      <div class="logotxt"><h1><a>欢迎来到学生管理系统</a></h1></div>
+          <h2 class="site-name text-center"><a href="http://127.0.0.1:8000/stutens_manage/classes.html">班级管理</a></h2>
+           <h2 class="site-name text-center"><a href="http://127.0.0.1:8000/stutens_manage/students.html">学生管理</a></h2>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<main class="main" role="main">
+    <div class="container">
+        <div class="row">
+
+{##}
+            <div class="col-xs-12">
+                <div class="maincontent">
+                    <article class="post tag-foreign-website tag-bootstrap-v4">
+
+{#                        <h1>Themes.guide</h1>#}
+                        {% block contents %}
+                        {% endblock %}
+{#                        <section class="post-content">#}
+{#                            <p><img src="./Themes.guide_files/1f2950a9a3980e0de24f78d230c62.png" alt="">#}
+{#<a href="http://www.youzhan.org/themes-guide/">Themes.guide</a></p>#}
+{#                        </section>#}
+
+                        <div class="url"></div>
+
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+{##}
+</main>
+
+    <div class="submit-site">
+    <div class="container">
+        <div class="submit">
+            <p class="text-center">欢迎到Github围观作者<a href="https://github.com/" target="_blank">lkd8477604</a>欢迎发送邮件到 <a>1368607459@qq.com</a> 与作者交流！</p>
+            <p class="text-center">知识从累积起步</p>
+        </div>
+    </div>
+</div>
+
+{#<footer class="main-footer">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-sm-4">#}
+{#                <div class="widget">#}
+{#                    <h4 class="title">友情链接</h4>#}
+{#                    <div class="content tag-cloud friend-links">#}
+{#                        <a href="http://www.bootcss.com/" title="Bootstrap中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Bootstrap中文网&#39;])" target="_blank">Bootstrap中文网</a>#}
+{#                        <a href="https://www.quanzhanketang.com/" title="全栈课堂" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;全栈课堂&#39;])" target="_blank">全栈课堂</a>#}
+{#                        <a href="https://www.webpackjs.com/" title="Webpack中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Webpack中文网&#39;])" target="_blank">Webpack中文网</a>#}
+{#                        <a href="https://www.nodeapp.cn/" title="Node.js中文文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Node.js中文文档&#39;])" target="_blank">Node.js中文文档</a>#}
+{#                        <a href="http://www.91php.com/" title="91PHP" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;91PHP&#39;])" target="_blank">91PHP</a>#}
+{#                        <a href="http://www.rollupjs.com/" title="Rollup中文文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Rollup中文文档&#39;])" target="_blank">Rollup中文文档</a>#}
+{#                        <a href="https://www.jquery123.com/" title="jQuery中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;jQuery中文网&#39;])" target="_blank">jQuery中文网</a>#}
+{#                        <a href="https://www.npmjs.com.cn/" title="NPM中文文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;NPM中文文档&#39;])" target="_blank">NPM中文文档</a>#}
+{#                        <a href="https://www.sasscss.com/" title="SASS中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;SASS中文网&#39;])" target="_blank">SASS中文网</a>#}
+{#                        <a href="http://www.golaravel.com/" title="Laravel中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Laravel中文网&#39;])" target="_blank">Laravel中文网</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-sm-4">#}
+{#                <div class="widget">#}
+{#                    <h4 class="title">我们用到的技术</h4>#}
+{#                    <div class="content tag-cloud">#}
+{#                        <a href="http://www.bootcss.com/" title="Bootstrap中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Bootstrap中文网&#39;])" target="_blank">Bootstrap</a>#}
+{#                        <a href="http://www.ghostchina.com/" title="Ghost中国" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Ghost中国&#39;])" target="_blank">Ghost</a>#}
+{#                        <a href="http://www.bootcdn.cn/" title="BootCDN" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;BootCDN&#39;])" target="_blank">BootCDN</a>#}
+{#                        <a href="http://www.gruntjs.net/" title="Grunt中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Grunt中文网&#39;])" target="_blank">Grunt</a>#}
+{#                        <a href="http://www.jquery123.com/" title="jQuery中文文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;jQuery中文文档&#39;])" target="_blank">jQuery</a>#}
+{#                        <a href="http://lodashjs.com/" title="lodash中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Lodash中文网&#39;])" target="_blank">Lodash</a>#}
+{#                        <a href="http://www.gulpjs.com.cn/" title="Gulp中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;Gulp中文网&#39;])" target="_blank">Gulp</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-sm-4">#}
+{#                <div class="widget">#}
+{#                    <h4 class="title">赞助商</h4>#}
+{#                    <div class="content friend-links">#}
+{#                        <a href="https://www.upyun.com/" title="又拍云" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;又拍云&#39;])" target="_blank">又拍云</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</footer>#}
+
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright © <a href="http://www.youzhan.org/">优站精选</a></span> |
+                <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="./Themes.guide_files/jquery.min.js"></script>
+    <script src="./Themes.guide_files/handlebars.min.js"></script>
+
+    <script type="text/javascript" src="./Themes.guide_files/index.js"></script>
+
+</body></html>
